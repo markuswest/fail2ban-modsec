@@ -1,0 +1,11 @@
+# Custom jail.local for nginx-modsecurity
+[nginx-modsecurity]
+enabled  = true
+port     = http,https
+logpath  = /var/log/nginx/error.log
+maxretry = 1 # change to desired number
+bantime  = 30 # change to desired bantime in seconds
+filter   = nginx-modsecurity 
+banaction = iptables-allports
+
+# Author: Markus West
